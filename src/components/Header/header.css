@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+header {
+  width: 100%;
+  float: left;
+  clear: both;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 30px 100px;
+}
+header .nav {
+  margin-right: 4%;
+}
+header .nav .nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+header .nav .nav-item .nav-link {
+  color: white;
+}
+header .language-select {
+  min-width: 100px;
+  max-width: 100px;
+  width: 100px;
+  padding: 0.3rem 4.5rem 0.3rem 1rem !important;
+  border-radius: 4px;
+  background-position: right 1rem center;
+}
+
+header .logo img {
+  width: 150px;
+}
+
+.mode-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+#making-color-red {
+  color: red;
+}
+
+.theme-toggle-button {
+  position: absolute;
+  top: 54px;
+  right: 143px;
+  z-index: 1;
+}
+.theme-toggle-button button {
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border: 0;
+  background: none;
+  border: 1px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.theme-toggle-button button:hover, .theme-toggle-button button:focus {
+  background: #D63548;
+  border-color: #D63548;
+}
+.theme-toggle-button button .bi {
+  font-size: 20px;
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .theme-toggle-button {
+    right: 100px;
+  }
+}
+@media (max-width: 768px) {
+  header a.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .theme-toggle-button {
+    right: 100px;
+  }
+}
+@media (max-width: 600px) {
+  header {
+    padding: 20px 0px;
+  }
+  header .logo img {
+    width: 80px;
+  }
+  header .language-select {
+    min-width: 80px;
+    max-width: 80px;
+    width: 80px;
+    padding: 0.3rem 1.5rem 0.3rem 1rem !important;
+  }
+  header .nav-link {
+    font-size: 12px;
+  }
+  header .nav {
+    margin-right: 7%;
+  }
+  .theme-toggle-button {
+    top: 27px;
+    right: 14px;
+  }
+  .main-div {
+    border-top: 87px solid black;
+  }
+}/*# sourceMappingURL=header.css.map */
