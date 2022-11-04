@@ -10,28 +10,10 @@ const persistConfig = {
   key:"main-root",
   storage,
 }
-
 const persistedReducer = persistReducer(persistConfig,rootReducer);
 
 
-
-
-
-// const userInfoFromStorage = localStorage.getItem('userInfo')
-//   ? JSON.parse(localStorage.getItem('userInfo')!)
-//   : undefined
-
-// const initialState = {
-//   userLogin: { userInfo: userInfoFromStorage },
-// } as {}
-
-
 const middleware = [...getDefaultMiddleware(), logger];
-
-// const store = configureStore({
-//   reducer: rootReducer,
-//   middleware,
-// })
 const store = configureStore({
   reducer: persistedReducer,
   middleware,

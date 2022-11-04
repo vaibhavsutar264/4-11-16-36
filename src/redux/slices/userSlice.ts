@@ -4,7 +4,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 export interface UserState {
   loading?: boolean
   error?: String
-  userInfo?: { email?: String; password?: String; success?: Boolean; error?: String; token?: any; }
+  userInfo: { email?: String; password?: String; success?: Boolean; error?: String; token?: any; }
   token?: any
 }
 
@@ -17,7 +17,8 @@ export interface BasicUser {
   role?: string;
   token?:string;
   password?: string;
-  loading?: boolean;
+  // token:string;
+  // role: string;
 }
 
 const initialState: UserState = {
@@ -33,8 +34,8 @@ const userSlice = createSlice({
     userLogin: (state: UserState = { userInfo: {} },
       action: PayloadAction<BasicUser>) => ({
       ...state,
-      userLogin: action.payload,
       loading: false,
+      userLogin: action.payload,
     }),
     userLogout: () => initialState,
   },

@@ -52,6 +52,8 @@ export const login =
       // const data = await response.json()
       const userData = { email: data.data.user.email, role:data.data.user.role, token:data.data.token }
       const token: any = data.data.token
+      localStorage.setItem('userInfo', JSON.stringify(userData))
+      localStorage.setItem('token', token)
 
       dispatch(userLoginActionCreator(userData));
       
@@ -60,10 +62,8 @@ export const login =
       //   payload: [{"email":data.data.user.email} ,{"role":data.data.user.role}, {"token":data.data.token}]
       // })
       
-      localStorage.setItem('userInfo', JSON.stringify(userData))
-      localStorage.setItem('token', token)
     } catch (error: any) {
-      // dispatch(userLoginActionCreator(error));
+      dispatch(userLoginActionCreator(error));
     }
   }
 
@@ -72,8 +72,7 @@ export const logout =
   async (dispatch: ThunkDispatch<RootState, unknown, AnyAction>) => {
     localStorage.removeItem('token')
     localStorage.removeItem('userInfo')
-    // dispatch(userLogoutActionCreator());
-    
+    dispatch(userLogoutActionCreator());   
     await fetch('/logout', {
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
